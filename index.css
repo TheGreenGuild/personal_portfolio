@@ -3,7 +3,22 @@ html{
     scroll-behavior: smooth;
 }
 
+body{
+    display: flex;
+    flex-direction: column;
+}
 
+#navbar{
+    position: fixed;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    background-color: rgb(184, 255, 255);
+}
+
+#welcome-section{
+    height:100vh
+}
 
 
 
