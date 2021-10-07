@@ -1,25 +1,63 @@
+/*I don't want a border around the whole page*/
+*{
+    margin: none;
+}
+
 html{
     box-sizing: border-box;
     scroll-behavior: smooth;
 }
-
-body{
-    display: flex;
-    flex-direction: column;
+a{
+    text-decoration: none;
+    color:rgb(49, 49, 49)
 }
 
 #navbar{
     position: fixed;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-around;
     width: 100%;
-    background-color: rgb(184, 255, 255);
+    background-color: rgba(184, 255, 255, .5);
+}
+
+#nav-list{
+    display: flex;
+}
+
+#nav-list > li{
+    list-style-type: none;
+    color:red;
+}
+#nav-list > li > a {
+    color:red;
+    padding: 0% 10px;
+}
+
+a:hover{
+    color:blueviolet
 }
 
 #welcome-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height:100vh
 }
 
+#projects{
+    background-color:rgb(255, 147, 147)
+}
+
+figure{
+    background-color: cadetblue;
+    box-shadow: .5em .5em 1em .1em blue;
+}
+
+figcaption{
+    display: flex;
+    justify-items: center;
+    align-items: center;
+}
 
 
 @media (max-width:75em) {
