@@ -4,8 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Teison Edwards' page with several of his works.">
+    <meta
+      name="description"
+      content="Teison Edwards' page with several of his works."
+    />
     <title>Teison Edwards Portfolio</title>
+    <link rel="stylesheet" href="index.css">
   </head>
 
   <!--Start of page body-->
@@ -20,13 +24,13 @@
           <a href="index.html">Home</a>
         </li>
         <li>
-          <a href="#">About</a>
+          <a href="#projects">About</a>
         </li>
         <li>
           <a href="#projects">Projects</a>
         </li>
         <li>
-          <a href="#">Contact</a>
+          <a href="#projects">Contact</a>
         </li>
       </ul>
     </nav>
@@ -42,20 +46,32 @@
       <!--Start of Projects Section-->
       <section id="projects">
         <h2>Work I've Done</h2>
-        <figure class="project-tile">
-          <a href="logo_work.html">
+        <a href="logo_work.html">
+          <figure class="project-tile">
             <img
               src="pictures_for_portfolio/green_guild_examples.svg"
               alt="A picture of a leaf logo shaped like a book."
             />
-          </a>
-        </figure>
+
+            <figcaption>Logo Design Work</figcaption>
+          </figure>
+        </a>
       </section>
       <!--End of Projects Section-->
     </main>
 
     <!--Start of page footer-->
-    <footer></footer>
+    <footer>
+      <h2>Nice to meet you</h2>
+      <p>
+        <a
+          id="profile-link"
+          href="https://github.com/TheGreenGuild"
+          target="_blank"
+          >Github</a
+        >
+      </p>
+    </footer>
   </body>
   <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
 </html>

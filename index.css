@@ -1,4 +1,21 @@
 html{
     box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+
+
+
+
+@media (max-width:75em) {
+ section {
+     font-size: 100%
+ }
+}
+
+@media (max-width: 100.75 em) {
+    section {
+        font-size: 58%;
+    }
 }
 
