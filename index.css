@@ -40,10 +40,12 @@ a{
 
 #nav-list > li{
     list-style-type: none;
+
 }
 #nav-list > li > a {
     color:var(--text_gray);
-    padding: 0% 10px;
+    padding: 0% 5vh;
+    font-size: 1.3em;
 }
 
 
@@ -59,7 +61,7 @@ a{
 }
 
 #welcome-section > h1 {
-    font-size: 3rem;
+    font-size: 5rem;
 }
 
 #projects_heading{
@@ -67,8 +69,9 @@ a{
     display: flex;
     justify-content: center;
     padding-left: 5vh;
-    padding-bottom: 2vh;
-    color: var(--text_gray);
+    padding-bottom: 10vh;
+    color:var(--text-gray);
+    font-size: 2em;
 }
 
 #projects_area{
@@ -76,8 +79,8 @@ a{
     justify-content: space-around;
     flex-wrap: wrap;
     padding: 50px 30px;
-    border-top: 30px groove rgb(118, 253, 118);
-    border-bottom: 30px groove rgb(118, 253, 118);
+    border-top: 30px solid rgb(148, 226, 148);
+    border-bottom: 30px solid rgb(148, 226, 148);
     background-color:var(--highlight-color)
 }
 
@@ -95,26 +98,31 @@ a{
 figcaption{
     text-align: center;
     font-family: Poppins;
+    font-size: 1.3em;
 }
 
 #contact_info{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    text-align: center;
     font-family: Poppins;
-    color:red;
+    color: var(--text-gray);
     margin: 20vh 0vh;
 }
 #contact_header{
-    margin: 20px 10px;
-    font-size: 3em;
+    font-size: 4em;
+}
+
+#contact_slogan{
+    font-size: 1.3em;
+    margin-bottom: 10vh;
 }
 
 #contact_links > a {
     color:var(--text-gray);
-    margin: 0px 20px;
-
+    margin: 0px 40px;
+    font-size: 1.3em;
 }
 
 
