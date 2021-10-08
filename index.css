@@ -74,7 +74,7 @@ a{
     font-size: 2em;
 }
 
-#projects_area{
+#projects{
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
@@ -84,11 +84,11 @@ a{
     background-color:var(--highlight-color)
 }
 
-.project_tile{
+.project-tile{
     margin: 15px;
 }
 
-.project_tile > figure > img {
+.project-tile > figure > img {
     background-color: rgb(199, 199, 199);
     box-shadow: .1em .1em .1em .1em rgb(136, 135, 135);
     padding: 20px 10px;
