@@ -1,5 +1,5 @@
 /*I don't want a border around the whole page*/
-*{
+* {
     margin: 0;
 }
 
@@ -7,9 +7,20 @@ html{
     box-sizing: border-box;
     scroll-behavior: smooth;
 }
+
+a:hover{
+    color:var(--anchor_text_color);
+}
+
 a{
     text-decoration: none;
     color:rgb(49, 49, 49)
+}
+
+:root{
+    --text-gray: rgb(77, 77, 77);
+    --anchor_text_color: rgb(28, 138, 28);
+    --highlight-color: rgb(217, 250, 174);
 }
 
 #navbar{
@@ -18,8 +29,9 @@ a{
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    background-color: rgba(184, 255, 255, .5);
+    background-color: var(--highlight-color);
     height: 10vh;
+    font-family: Poppins;
 }
 
 #nav-list{
@@ -30,13 +42,10 @@ a{
     list-style-type: none;
 }
 #nav-list > li > a {
-    color:red;
+    color:var(--text_gray);
     padding: 0% 10px;
 }
 
-a:hover{
-    color:blueviolet
-}
 
 #welcome-section{
     text-align: center;
@@ -44,37 +53,48 @@ a:hover{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height:100vh
-    
+    height:100vh;
+    color: var(--text-gray);
+    font-family: Poppins;
+}
+
+#welcome-section > h1 {
+    font-size: 3rem;
 }
 
 #projects_heading{
+    font-family: Poppins;
+    display: flex;
+    justify-content: center;
     padding-left: 5vh;
     padding-bottom: 2vh;
+    color: var(--text_gray);
 }
 
-#projects{
+#projects_area{
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
     padding: 50px 30px;
-    background-color:rgb(228, 253, 196)
+    border-top: 30px groove rgb(118, 253, 118);
+    border-bottom: 30px groove rgb(118, 253, 118);
+    background-color:var(--highlight-color)
 }
 
-:root{
-    --one_tile: 80px;
+.project_tile{
+    margin: 15px;
 }
 
 .project_tile > figure > img {
     background-color: rgb(199, 199, 199);
-    box-shadow: .3em .3em .3em .1em rgb(136, 135, 135);
+    box-shadow: .1em .1em .1em .1em rgb(136, 135, 135);
     padding: 20px 10px;
+    height: 150px;
 }
 
 figcaption{
-    display: flex;
-    justify-items: center;
-    align-items: center;
+    text-align: center;
+    font-family: Poppins;
 }
 
 #contact_info{
@@ -82,31 +102,24 @@ figcaption{
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-footer > h2 { 
-    text-align: center;
-}
-
-#footer_slogan{
-    text-align: center;
-    padding: 5px;
+    justify-content: center;
+    font-family: Poppins;
 }
 
-
-#profile_links > a{ 
-    padding: 6vh;
-    font-size: 1.3rem;
+#contact_links{
+    
 }
+
 
 @media (max-width:75em) {
  section {
-     font-size: 100%
+     font-size: 100%;
  }
 }
 
 @media (max-width: 100.75 em) {
     section {
-        font-size: 58px;
+        font-size: 80%;
     }
 }
 
