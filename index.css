@@ -1,6 +1,6 @@
 /*I don't want a border around the whole page*/
 *{
-    margin: none;
+    margin: 0;
 }
 
 html{
@@ -16,8 +16,10 @@ a{
     position: fixed;
     display: flex;
     justify-content: space-around;
+    align-items: center;
     width: 100%;
     background-color: rgba(184, 255, 255, .5);
+    height: 10vh;
 }
 
 #nav-list{
@@ -26,7 +28,6 @@ a{
 
 #nav-list > li{
     list-style-type: none;
-    color:red;
 }
 #nav-list > li > a {
     color:red;
@@ -38,19 +39,36 @@ a:hover{
 }
 
 #welcome-section{
+    text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     height:100vh
+    
+}
+
+#projects_heading{
+    padding-left: 5vh;
+    padding-bottom: 2vh;
 }
 
 #projects{
-    background-color:rgb(255, 147, 147)
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 50px 30px;
+    background-color:rgb(228, 253, 196)
 }
 
-figure{
-    background-color: cadetblue;
-    box-shadow: .5em .5em 1em .1em blue;
+:root{
+    --one_tile: 80px;
+}
+
+.project_tile > figure > img {
+    background-color: rgb(199, 199, 199);
+    box-shadow: .3em .3em .3em .1em rgb(136, 135, 135);
+    padding: 20px 10px;
 }
 
 figcaption{
@@ -59,6 +77,26 @@ figcaption{
     align-items: center;
 }
 
+#contact_info{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+footer > h2 { 
+    text-align: center;
+}
+
+#footer_slogan{
+    text-align: center;
+    padding: 5px;
+}
+
+
+#profile_links > a{ 
+    padding: 6vh;
+    font-size: 1.3rem;
+}
 
 @media (max-width:75em) {
  section {
@@ -68,7 +106,7 @@ figcaption{
 
 @media (max-width: 100.75 em) {
     section {
-        font-size: 58%;
+        font-size: 58px;
     }
 }
 
