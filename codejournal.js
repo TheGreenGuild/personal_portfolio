@@ -42,3 +42,14 @@ const myCar ={
     year: "1965",
     vin: "123792317321987213987"
 }
+
+// Arrow funtion 
+
+// basic syntax is (arguments) => {}
+
+//a higher order funtion is a ufntion that accepts anotther function as a parameter
+//filter, amp and reduce are the most pupular, but forEach, every, find, and some are also HOFs
+
+const theFunction = () => {
+    //multiple lines he went away from the page bfore I could copy the notes here
+}
