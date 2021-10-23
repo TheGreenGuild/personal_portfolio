@@ -1,6 +1,8 @@
-import {films} from './data/films.js'
+import { films } from '../data/films.js'
 
 let filmList = document.querySelector('#filmList')
+
+filmList.textContent = 'This is my content, it isnt very long.'
 
 for (let i = 0; i <films.length; i++){
     let figure = document.createElement{'figure'}
