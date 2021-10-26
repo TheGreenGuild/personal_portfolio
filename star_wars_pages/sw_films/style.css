@@ -2,7 +2,22 @@ header{
     color: rgb(109, 109, 12);
 }
 
+figure{
+    margin:10px;
+    background-color: brown;
+}
+figcaption{
+    text-align: center;
+    font-size: xx-large;
+}
+
 li{
     color: purple;
     font-size: xx-large;
+}
+
+main{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
