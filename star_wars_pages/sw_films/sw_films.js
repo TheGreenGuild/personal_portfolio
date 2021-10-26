@@ -1,26 +1,20 @@
 import { films } from '../data/films.js'
 
-console.log("hello! This is in the console")
+let filmList= document.querySelector('#filmList')
 
-I left off on the Oct 14th recording 13min in
+filmList.textContent = 'this is my content'
 
-// let filmList = document.querySelector('#filmList')
+let myImg = document.createElement('img')
+myImg.src = `https://starwars-visualguide.com/assets/img/films/7.jpg`
 
-// filmList.textContent = 'This is my content, it isnt very long.'
+filmList.appendChild(myImg)
 
-// for (let i = 0; i <films.length; i++){
-//     let figure = document.createElement{'figure'}
-//     let figImg = document.createElement{'img'}
-//     figImg.src = 'https://starwars-visualguide.com/assets/img/films/1.jpg'
-//     let figCaption = document.createElement{'figcaption'}
-//     figCaption.textContent = 'File Title Goes Here'
+let titleList = document.createElement('ol')
+filmList.appendChild(titleList)
 
-//     figure.appendChild{figImg}
-//     figure.appendChild{figCaption}
-//     figure.appendChild{figure}
-// }
-
-// add a function later that will ge the url propery and use array.find to match the
-// titles with the films
-
-//If you select a block of code and use the key sequence Ctrl+K+C, you'll comment out the section of code. Ctrl+K+U will uncomment the code. 
+for (let i = 0; i<films.length; i++){
+    console.log(films[i].title)
+    let listItem = document.createElement('li')
+    listItem.textContent = films[i].title
+    titleList.appendChild(listItem)
+}
