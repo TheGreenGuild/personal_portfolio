@@ -1,0 +1,17 @@
+header{
+    display: flex;
+    justify-content: space-around;
+    background-color: #333;
+    padding: 2em 0;
+
+}
+
+button{
+    font-size: x-large;
+    border-radius: 10px;   
+    background-color: aqua;
+}
+
+button:hover{
+    background-color: bisque;
+}
