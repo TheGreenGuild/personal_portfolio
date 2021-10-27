@@ -1,6 +1,29 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+main{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+figure{
+    margin: 4px;
+}
+
+figure img{
+    width: 200px;
+}
+figcaption{
+    text-align: center;
+}
+
 header{
     display: flex;
     justify-content: space-around;
+    color: rgb(199, 199, 7);
     background-color: #333;
     padding: 2em 0;
 
