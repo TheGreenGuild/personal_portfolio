@@ -18,6 +18,8 @@ figure img{
 }
 figcaption{
     text-align: center;
+    background-color: bisque;
+    border-radius: 4px;
 }
 
 header{

@@ -1,9 +1,9 @@
 import { people } from "../data/people.js";
+import { getLastNumber } from "../utils/index.js";
 
 const mainContent = document.querySelector("#main");
 
 populateDOM(people);
-
 // IDK what happend to this line of code --->const mainBody = document.querySelector("body")
 const header = document.createElement("header");
 const maleButton = document.createElement("button");
@@ -45,13 +45,4 @@ function populateDOM(characters) {
     charFigure.appendChild(charCaption);
     mainContent.appendChild(charFigure);
   });
-}
-
-function getLastNumber(url) {
-  let end = url.lastIndexOf("/");
-  let start = end - 2;
-  if (url.charAt(start) === "/") {
-    start++;
-  }
-  return url.slice(start, end);
 }
