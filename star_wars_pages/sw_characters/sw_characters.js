@@ -1,5 +1,6 @@
 import { people } from "../data/people.js";
 import { getLastNumber } from "../utils/index.js";
+import { removeChildren } from "../utils/index.js";
 
 const mainContent = document.querySelector("#main");
 
@@ -28,10 +29,9 @@ const otherCharacters = people.filter((person) => {
 
 function populateDOM(characters) {
   //first clear the page, then populate
-  while (mainContent.firstChild) {
-    //The list is LIVE so it will reindex each call
-    mainContent.removeChild(mainContent.firstChild);
-  }
+      //The list is LIVE so it will reindex each call
+      removeChildren(mainContent)
+
   characters.forEach((person, index) => {
     const charFigure = document.createElement("figure");
     const charImg = document.createElement("img");

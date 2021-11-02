@@ -7,3 +7,8 @@ export function getLastNumber(url) {
     return url.slice(start, end);
   }
   
+export function removeChildren(container){
+  while (mainContent.firstChild) {
+    //The list is LIVE so it will reindex each call
+    mainContent.removeChild(mainContent.firstChild);
+  }}
