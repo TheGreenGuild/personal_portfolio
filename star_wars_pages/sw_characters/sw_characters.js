@@ -1,6 +1,8 @@
+
+
+// I changed the code last time by removing the while loop and something broke here. 
 import { people } from "../data/people.js";
-import { getLastNumber } from "../utils/index.js";
-import { removeChildren } from "../utils/index.js";
+import { getLastNumber, removeChildren} from "../utils/index.js";
 
 const mainContent = document.querySelector("#main");
 
@@ -29,20 +31,21 @@ const otherCharacters = people.filter((person) => {
 
 function populateDOM(characters) {
   //first clear the page, then populate
-      //The list is LIVE so it will reindex each call
-      removeChildren(mainContent)
+  //The list is LIVE so it will reindex each call
+  removeChildren(mainContent)  
 
   characters.forEach((person, index) => {
-    const charFigure = document.createElement("figure");
-    const charImg = document.createElement("img");
-    const charNum = getLastNumber(person.url);
+    const charFigure = document.createElement("figure")
+    const charImg = document.createElement("img")
+    const charNum = getLastNumber(person.url)
     charImg.src = `https://starwars-visualguide.com/assets/img/characters/${charNum}.jpg`;
 
-    const charCaption = document.createElement("figcaption");
+    const charCaption = document.createElement("figcaption")
     charCaption.textContent = person.name;
 
     charFigure.appendChild(charImg);
     charFigure.appendChild(charCaption);
     mainContent.appendChild(charFigure);
-  });
+  })
 }
+
