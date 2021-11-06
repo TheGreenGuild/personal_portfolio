@@ -8,17 +8,37 @@ const mainContent = document.querySelector("#main");
 
 populateDOM(people);
 // IDK what happend to this line of code --->const mainBody = document.querySelector("body")
+//made a header
 const header = document.createElement("header");
+
+//makes a male button that populates the DOM when clicked using a function I made below. 
 const maleButton = document.createElement("button");
 maleButton.textContent = "Male Characters";
 maleButton.addEventListener("click", () => populateDOM(maleCharacters));
 
-const femaleButton = document.createElement("button");
-femaleButton.textContent = "Female Characters";
-header.appendChild(maleButton);
-header.appendChild(femaleButton);
+//makes a female button that populates the DOM when clicked using a function I made below. 
+const femaleButton = document.createElement("button")
+femaleButton.textContent = "Female Characters"
 femaleButton.addEventListener("click", () => populateDOM(femaleCharacters));
 
+//makes an other button that populates the DOM when clicked using a function I made below. 
+const otherButton = document.createElement("button")
+otherButton.textContent = "Other Characters"
+otherButton.addEventListener("click", () => populateDOM(otherCharacters))
+
+
+const allButton = document.createElement("button")
+allButton.textContent = "All Characters"
+allButton.addEventListener("click", () => populateDOM(allCharachters))
+
+
+//attaches those buttons to the header where I want them to be. 
+header.appendChild(allButton)
+header.appendChild(femaleButton)
+header.appendChild(maleButton)
+header.appendChild(otherButton)
+
+//IDK why I need this line to specify that. Maybe it's just the order I made stuff in? 
 document.body.insertBefore(header, mainContent);
 
 const maleCharacters = people.filter((person) => person.gender === "male");
@@ -27,7 +47,8 @@ const otherCharacters = people.filter((person) => {
   if (person.gender !== "male" && person.gender !== "female") {
     return person;
   }
-});
+})
+const allCharachters = people 
 
 function populateDOM(characters) {
   //first clear the page, then populate
