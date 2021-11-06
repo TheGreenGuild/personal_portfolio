@@ -1,25 +1,56 @@
 *{
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Nanum Gothic', sans-serif;
 }
 .nav{
     margin-left: 1rem;
+    background-color: silver;
+}
+
+nav ul a{
+    color:rgb(165, 26, 26);
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+
+header h1{
+    color: rgb(165, 26, 26);
+    font-weight: 700;
+    font-size: 2rem;
+    background-color: #333;
+    padding: 1rem;
+    text-align: center;
 }
 
 main{
     display: flex;
+    background-color: rgb(70, 70, 70);
+
 }
 
 section{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: bisque;
     width: 100%;
 }
 
+img{
+    border-radius: 10px;
+    border: 2px solid rgb(165, 26, 26);
+}
+
 .box{
-    background-color: bisque;
+    background-color: silver;
+    color:rgb(165, 26, 26);
     text-align: center;
     font-size: 2rem;;
+}
+
+footer{
+    text-align: center;
+    padding: 2rem;
+    background-color: #333;
+    color: silver;
 }

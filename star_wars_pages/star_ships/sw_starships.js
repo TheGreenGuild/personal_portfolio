@@ -30,6 +30,7 @@ function populateNav(starships) {
     })
 }
 
+
 //This makes the stuff show up and remove the old ships. 
 //With the modal it now shows that cool box when the image is lost
 populateNav(starships)

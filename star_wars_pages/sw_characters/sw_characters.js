@@ -11,25 +11,25 @@ populateDOM(people);
 //made a header
 const header = document.createElement("header");
 
-//makes a male button that populates the DOM when clicked using a function I made below. 
 const maleButton = document.createElement("button");
 maleButton.textContent = "Male Characters";
 maleButton.addEventListener("click", () => populateDOM(maleCharacters));
 
-//makes a female button that populates the DOM when clicked using a function I made below. 
 const femaleButton = document.createElement("button")
 femaleButton.textContent = "Female Characters"
 femaleButton.addEventListener("click", () => populateDOM(femaleCharacters));
 
-//makes an other button that populates the DOM when clicked using a function I made below. 
 const otherButton = document.createElement("button")
 otherButton.textContent = "Other Characters"
 otherButton.addEventListener("click", () => populateDOM(otherCharacters))
 
-
 const allButton = document.createElement("button")
 allButton.textContent = "All Characters"
 allButton.addEventListener("click", () => populateDOM(allCharachters))
+
+//header title? 
+const returnButton = document.createElement("button")
+returnButton.textContent = "Home Page"
 
 
 //attaches those buttons to the header where I want them to be. 
