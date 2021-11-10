@@ -6,12 +6,15 @@
 .nav{
     margin-left: 1rem;
     background-color: silver;
+    padding-left: 2rem;
 }
 
 nav ul a{
     color:rgb(165, 26, 26);
     font-weight: 700;
     font-size: 1.3rem;
+    display: block;
+    padding: .4rem 0;
 }
 
 header h1{
@@ -38,7 +41,7 @@ section{
 
 img{
     border-radius: 10px;
-    border: 2px solid rgb(165, 26, 26);
+    border: 5px solid rgb(165, 26, 26);
 }
 
 .box{

@@ -7,9 +7,13 @@ main{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    background-color: rgb(70, 70, 70);
     font-family: 'Nanum Gothic', sans-serif;
     font-weight: 400;
+    padding: 2rem 0;
+}
+
+body{
+    background-color: rgb(70, 70, 70);
 }
 
 figure{
@@ -26,6 +30,7 @@ figcaption{
     background-color: rgb(165, 26, 26);
     border-radius: 4px;
     color: silver;
+    padding: .3rem 0 .3rem 0;
 }
 
 header{
@@ -49,7 +54,4 @@ button:hover{
     background-color: rgb(126, 126, 126);
 /* offset-x | offset-y | blur-radius | spread-radius | color */
     box-shadow: 0px 1px 3px red;
-}
-main{
-    padding: 2rem 0;
 }
