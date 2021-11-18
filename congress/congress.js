@@ -3,13 +3,15 @@ import {senators} from "../data/senators.js"
 const senatorDiv = document.querySelector('.senators')
 
 //We simplify the data
-function simplifiedSenators(senatorArray){
-    return senatorArray.map(senator =>{
+function simplifiedSenators(){
+    return senators.map(senator =>{
         let middleName = senator.middle_name ? ` ${senator.middle_name} ` : ` `
         return {
             id: senator.id,
             name: `${senator.first_name}${middleName}${senator.last_name}`,
             party: senator.party,
+            gender: senator.gender, 
+            seniority: +senator.seniority,
             imgURL: `https://www.govtrack.us/static/legislator-photos/${senator.govtrack_id}-100px.jpeg`
         }
     })
@@ -32,7 +34,14 @@ function populateSenatorDiv(simplifiedSenators) {
     
 }
 
+
+const filterSenators = (prop, value) => simplifiedSenators().filter(senator => senator[prop] === value)
+
+const mostSeniorSenator = simplifiedSenators().reduce((acc, senator) => acc.seniority > senator.seniority ? acc : senator)
+
+console.log(mostSeniorSenator)
 //And then we run the javaScript. 
 //senators is the huge array of data we're working with, then we simplify it and run it in our assembler function
 //(our html page has the script at the bottom)
+
 populateSenatorDiv(simplifiedSenators(senators))
