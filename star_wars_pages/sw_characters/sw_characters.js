@@ -53,7 +53,7 @@ const allCharachters = people
 function populateDOM(characters) {
   //first clear the page, then populate
   //The list is LIVE so it will reindex each call
-  removeChildren(mainContent)  
+  removeChildren(mainContent) 
 
   characters.forEach((person, index) => {
     const charFigure = document.createElement("figure")
@@ -69,4 +69,3 @@ function populateDOM(characters) {
     mainContent.appendChild(charFigure);
   })
 }
-
