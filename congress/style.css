@@ -1,17 +1,60 @@
 *{
     margin: 0;
     box-sizing: border-box;
+    --main-color-one: rgb(111, 114, 250);
+}
+ 
+
+/*header stuff*/
+header{
+    font-size: 2rem;
+    padding: 1.5rem 1rem;
 }
 
-header{
+/*nav stuff*/
+nav ul{
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    background-color: var(--main-color-one);
+    width: 100%;
+}
+
+nav ul .nav_button a{
+    display: block;
+    text-decoration: none;
+    padding: 1rem;
+    color: black;
+}
+
+nav ul .active a{
+    color: white;
+    background-color: black;
+}
+
+/*main stuff*/
+h1{
+    font-size: 1.5rem;
+}
+
+main h1{
+    padding: 1rem;
+}
+
+.buttons_div{
+    padding-left: 1rem;
+    background-color: rgb(255, 100, 100);
+}
+
+.buttons_div button{
+    font-size: 1rem;
+}
+
+.membersDiv{
     display: flex; 
     justify-content: space-between;
     align-items: center;
-}
-
-.senators{
-    display: flex;
-    flex-wrap: wrap;   
 }
 
 figure{
@@ -24,4 +67,18 @@ figcaption{
     text-align: center;
 }
 
-/*I got about 10 min into the video for Nov 11th*/
+/*modal stuff*/
+.modal-content{
+    padding: 1rem;
+}
+.modal-message ol{
+    padding: 1rem 2rem;
+}
+
+/*footer stuff here*/
+footer{
+    background-color: var(--main-color-one);
+    color: black;
+    text-align: center;
+    padding: 2rem;
+} 

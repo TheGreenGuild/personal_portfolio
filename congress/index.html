@@ -4,28 +4,53 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
   <link href="style.css" rel="stylesheet"/>
   <title>People of Congress</title>
 </head>
 <body>
   <header>
     <div>
+    <h1>Teison Edwards Portfolio</h1> 
+  </header>
+
+  <nav>
+    <ul>
+      <li class="nav_button"><a href="#">Home</a></li>
+      <li class="nav_button"><a href="#">Star Wars Projects</a></li>
+      <li class="nav_button active"><a href="#">Congress Project</a></li>
+      <li class="nav_button"><a href="#">Pokémon Card Project</a></li>
+    </ul>
+  </nav>
+
+  <main>
     <h1>People of Congress</h1>
+    <div class="buttons_div">
+      <button class="senators_button">Senators</button>
+      <button class="representatives_button">Representatives</button>
+      <button class="republicans_button">Republicans</button>
+      <button class="democrats_button">Democrats</button>
+    </div>
+
+    <div class="membersDiv"></div>
     <div class='mostLoyal'></div>
     <h4 class='seniority'></h4>
-  </div>
-    <button>Senators</button>
-    <button>Representatives</button>
-    <button>Republicans</button>
-    <button>Democrats</button>
-  </header>
-  <main>
-    <div class="senators">
 
-    </div>
   </main>
+
+  <!--The Bulma thing which takes over the font and adds the modal.-->
+  <div class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+      <h1 class="box modal-message"></h1>
+
+      <!-- Any other Bulma elements you want -->
+    </div>
+    <button class="modal-close is-large" aria-label="close"></button>
+  </div>
+
   <footer>
-    <h3>For Educational Purposes Only &copy; Thor Anderson 2021</h3>
+    <h3>For Educational Purposes Only &copy; Teison Edwards 2021</h3>
   </footer>
   <script src="congress.js" type="module"></script>
 </body>

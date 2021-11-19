@@ -7,7 +7,6 @@ import { getLastNumber, removeChildren} from "../utils/index.js";
 const mainContent = document.querySelector("#main");
 
 populateDOM(people);
-// IDK what happend to this line of code --->const mainBody = document.querySelector("body")
 //made a header
 const header = document.createElement("header");
 

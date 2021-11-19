@@ -1,39 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap"
+      rel="stylesheet"/>
+    <link rel="stylesheet" href="style.css" />
     <title>Star Ships</title>
-</head>
-<body>
+  </head>
+  <body>
     <!--Start of header-->
     <header>
-        <h1>&#8226;&#8226;&#8226; Bounty Hunters' Starship Database&#8226;&#8226;&#8226;</h1>
+      <h1>
+        &#8226;&#8226;&#8226; Bounty Hunters' Starship
+        Database&#8226;&#8226;&#8226;
+      </h1>
     </header>
-    
-    <main id = 'main'>
-        <!--Start of Nav inside Main-->
-        <nav class="nav">
-            <ul class = "navList"></ul>
-        </nav>
-        <section class = "displaySection"></section>
+
+    <main id="main">
+      <!--Start of Nav inside Main-->
+      <nav class="nav">
+        <ul class="navList"></ul>
+      </nav>
+      <section class="displaySection"></section>
     </main>
+    
     <div class="modal">
-        <div class="modal-background"></div>
-        <div class="modal-content">
-            <h1 class='box missingMessage'>No visual contact with this starship yet</h1>
-          <!-- Any other Bulma elements you want -->
-        </div>
-        <button class="modal-close is-large" aria-label="close"></button>
+      <div class="modal-background"></div>
+      <div class="modal-content">
+        <h1 class="box missingMessage">
+          No visual contact with this starship yet
+        </h1>
+        <!-- Any other Bulma elements you want -->
       </div>
+      <button class="modal-close is-large" aria-label="close"></button>
+    </div>
+
     <footer>
-        <p>&copy; Teison Edwards 2021</p>
+      <p>&copy; Teison Edwards 2021</p>
     </footer>
     <script src="sw_starships.js" type="module"></script>
-</body>
+  </body>
 </html>
