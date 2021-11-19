@@ -48,6 +48,7 @@ function populateMembersDiv(simplifiedMembers) {
     simplifiedMembers.forEach(senator =>{
         const senFigure = document.createElement('figure')
         const figImg = document.createElement('img')
+        figImg.classList.add('member-pic')
         const figCaption = document.createElement('figcaption')
 
         figImg.src = senator.imgURL
@@ -106,7 +107,7 @@ const cowardButton = document.createElement('button')
 cowardButton.textContent = 'Most Loyal Members'
 cowardButton.addEventListener('click', () => {
     modal.classList.toggle('is-active')
-    modalMessage.textContent = `The most spinless members of congress who vote with their party 100% of the time are: `
+    modalMessage.textContent = `The most spineless members of congress who vote with their party 100% of the time are: `
     modalMessage.appendChild(cowardList)
 })
 buttonsDiv.appendChild(cowardButton)

@@ -3,7 +3,6 @@
     box-sizing: border-box;
     --main-color-one: rgb(111, 114, 250);
 }
- 
 
 /*header stuff*/
 header{
@@ -55,19 +54,22 @@ main h1{
 
 .membersDiv{
     display: flex; 
-    justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 figure{
     width: 160px;
+    margin: 0 1rem;
     display: flex;
-    flex-direction: column;    
-    margin: 1rem;
+    flex-direction: column;
+    align-items: center;
 }
-figcaption{
-    text-align: center;
+figure .member-pic{
+    width: 100px;
+    height: auto;
 }
+
 
 /*modal stuff*/
 .modal-content{
