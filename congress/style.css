@@ -43,12 +43,14 @@ main h1{
 }
 
 .buttons_div{
-    padding-left: 1rem;
+    padding: 1rem;
     background-color: rgb(255, 100, 100);
 }
 
 .buttons_div button{
     font-size: 1rem;
+    padding: .5rem;
+    margin: .5rem;
 }
 
 .membersDiv{

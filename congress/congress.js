@@ -5,15 +5,11 @@ import {removeChildren} from "../star_wars_pages/utils/index.js"
 //We select what we want to attach this stuff to
 //do I need to the little . before the class? Yes. That's what was breaking my code beforeil
 const memberDiv = document.querySelector('.membersDiv')
-const loyaltyHeading = document.querySelector('.mostLoyal')
-const seniorityHeading = document.querySelector('.seniority')
 const buttonsDiv = document.querySelector('.buttons_div')
 const modal = document.querySelector('.modal')
 const closeButton = document.querySelector(".modal-close")
 const modalBackground = document.querySelector('.modal-background')
 const modalMessage = document.querySelector(`.modal-message`)
-const senatorsButton = document.querySelector('.senators_button')
-const repsButton = document.querySelector('.representatives_button')
 const republicansButton = document.querySelector('.republicans_button')
 const democratsButton = document.querySelector('.democrats_button')
 const footer = document.querySelector('footer')
@@ -61,20 +57,17 @@ function populateMembersDiv(simplifiedMembers) {
         senFigure.appendChild(figCaption)
         memberDiv.appendChild(senFigure)
     })
-    
 }
 
 //Got a few fun/useful values
 //const filterSenators = (prop, value) => simplifiedMembers().filter(senator => senator[prop] === value)
 const mostSeniorMember = simplifiedMembers().reduce((acc, senator) => acc.seniority > senator.seniority ? acc : senator)
-
 const mostLoyal = simplifiedMembers().reduce((acc, senator) => {
     if (senator.loyaltyPct === 100){
         acc.push(senator)
     }
     return acc
 }, [])
-
 const cowardList = document.createElement('ol')
 const spineless = mostLoyal.map(coward => {
     let listItem = document.createElement('li')
@@ -82,7 +75,24 @@ const spineless = mostLoyal.map(coward => {
     cowardList.appendChild(listItem)
 })
 
-seniorityHeading.textContent = `The most senior member of congress is ${mostSeniorMember.name} who has been in congress for ${mostSeniorMember.seniority} years.`
+const republicans = simplifiedMembers().filter((member) => member.party === "D")
+
+//Make the buttons and have them use the cool values retrieved above
+const senatorsButton = document.createElement('button')
+senatorsButton.textContent = 'Senators'
+senatorsButton.addEventListener('click', () =>{
+    removeChildren(memberDiv)
+    populateMembersDiv(simplifiedMembers('Sen.'))
+})
+buttonsDiv.appendChild(senatorsButton)
+
+const repsButton = document.createElement('button')
+repsButton.textContent = 'Representatives'
+repsButton.addEventListener('click', () =>{
+    removeChildren(memberDiv)
+    populateMembersDiv(simplifiedMembers('Rep.'))
+})
+buttonsDiv.appendChild(repsButton)
 
 const oldPersonButton = document.createElement('button')
 oldPersonButton.textContent = "Most Senior Member"
@@ -100,3 +110,11 @@ cowardButton.addEventListener('click', () => {
     modalMessage.appendChild(cowardList)
 })
 buttonsDiv.appendChild(cowardButton)
+
+// const republicanButton = document.createElement('button')
+// republicanButton.textContent = 'Republicans'
+// republicanButton.addEventListener('click', () =>{
+//     removeChildren(memberDiv)
+//     populateMembersDiv
+// })
+// buttonsDiv.appendChild(republicanButton)
