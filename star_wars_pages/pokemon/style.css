@@ -1,0 +1,61 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+    --main-color-one: rgb(111, 114, 250);
+}
+
+/*header stuff*/
+header{
+    font-size: 2rem;
+    padding: 1.5rem 1rem;
+}
+
+/*nav stuff*/
+nav ul{
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    background-color: var(--main-color-one);
+    width: 100%;
+}
+
+nav ul .nav_button a{
+    display: block;
+    text-decoration: none;
+    padding: 1rem;
+    color: black;
+}
+
+nav ul .active a{
+    color: white;
+    background-color: black;
+}
+
+/*Main stuff goes here */
+
+.scene{
+    width: 200px; 
+    height: 260px; 
+}
+
+.card{
+    width: 100%; 
+    height: 100%;
+}
+
+.card_face { 
+    width: 100%;
+    height: 100%;
+    background-color: beige;
+}
+
+.front{
+    color: white;
+    background-color: #2a75bb;
+}
+
+.back{
+    color: white;
+    background-color: salmon;
+}
