@@ -23,6 +23,9 @@ function populatePokeCards(singlePokemon) {
     pokeScene.className = 'scene'
     const pokeCard = document.createElement('div')
     pokeCard.className = 'card'
+    pokeCard.addEventListener('click', () =>
+        pokeCard.classList.toggle('is-flipped')
+    )
     const pokeFront = document.createElement('div')
     pokeFront.className = 'card_face front'
     pokeFront.textContent = 'Front'
@@ -36,3 +39,4 @@ function populatePokeCards(singlePokemon) {
     pokeScene.appendChild(pokeCard)
     pokeGrid.appendChild(pokeScene)
 }
+
