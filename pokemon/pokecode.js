@@ -26,17 +26,26 @@ function populatePokeCards(singlePokemon) {
     pokeCard.addEventListener('click', () =>
         pokeCard.classList.toggle('is-flipped')
     )
-    const pokeFront = document.createElement('div')
-    pokeFront.className = 'card_face front'
-    pokeFront.textContent = 'Front'
+    const front = populateCardFront(singlePokemon)
     const pokeBack = document.createElement('div')
     pokeBack.className = 'card_face back'
     pokeBack.textContent = 'Back'
     
 
-    pokeCard.appendChild(pokeFront)
+    pokeCard.appendChild(front)
     pokeCard.appendChild(pokeBack)
     pokeScene.appendChild(pokeCard)
     pokeGrid.appendChild(pokeScene)
 }
 
+function populateCardFront(pokemon){
+    const pokeFront = document.createElement('figure')
+    pokeFront.className = 'card_face front'
+    const pokeImg = document.createElement('img')
+    pokeImg.src = '../pictures_for_portfolio/pokeball.png'
+    const pokeCaption = document.createElement('figcaption')
+    pokeCaption.textContent = "Front"
+    pokeFront.appendChild(pokeImg)
+    pokeFront.appendChild(pokeCaption)
+    return pokeFront
+}

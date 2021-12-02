@@ -71,3 +71,7 @@ nav ul .active a{
     background-color: salmon;
     transform: rotateY(180deg);
 }
+
+figure img{
+    width: 200px;
+}
