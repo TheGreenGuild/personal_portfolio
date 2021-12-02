@@ -34,10 +34,17 @@ nav ul .active a{
 
 /*Main stuff goes here */
 
+.pokeGrid{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
 .scene{
     width: 200px; 
     height: 260px; 
     perspective: 600px;
+    margin: .5rem;
 }
 
 .card{
