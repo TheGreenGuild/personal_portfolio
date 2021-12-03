@@ -10,27 +10,68 @@ async function getAPIData(url) {
   }
 }
 
+
+
+
+
+
 function loadPokemon(offset = 0, limit = 25) {
-    removeChildren(pokeGrid)
   getAPIData(
     `https://pokeapi.co/api/v2/pokemon/?limit=${limit}&offset=${offset}`
   ).then(async (data) => {
     console.log(data)
     for (const pokemon of data.results) {
       await getAPIData(pokemon.url).then((pokeData) =>
-        populatePokeCards(pokeData)
+        populatePokeCard(pokeData)
       )
     }
   })
 }
 
+
+
+
+
+
 const pokeGrid = document.querySelector(".pokeGrid")
 const loadButton = document.querySelector(".loadPokemon")
-loadButton.addEventListener("click", () => loadPokemon(800, 50))
+loadButton.addEventListener("click", () => {
+    removeChildren(pokeGrid)
+    loadPokemon(0, 25)})
 const newButton = document.querySelector('.newPokemon')
-newButton.addEventListener('click', () => )
+newButton.addEventListener('click', () => {
+    let pokeName = prompt('What is the name of your made up Pokémon?')
+    let pokeHeight = prompt('How tall is your Pokémon?')
+    let pokeWeight = prompt('How heavy is your Pokémon?')
+    let pokeAbilities = prompt('What abilities does your Pokémon have? (Enter as a comma seperated list.)')
 
-function populatePokeCards(singlePokemon) {
+    let newPokemon = new Pokemon (pokeName, pokeHeight, pokeWeight, getAbilitiesArray(pokeAbilities))
+    console.log(newPokemon)
+    populatePokeCard(newPokemon)
+})
+
+function getAbilitiesArray(commaString) {
+    let tempArray = commaString.split(',')
+    console.log(tempArray)
+    return tempArray.map((abilityName) => {
+        return {
+            ability: {
+                name: abilityName
+            }
+        }
+    })
+}
+
+const morePokemon = document.querySelector('.morePokemon')
+morePokemon.addEventListener('click', () => {
+    let startPoint = prompt('Which Pokémon ID do you want to start with?')
+    let howMany = prompt('How many more Pokémon do you want to see? ')
+    loadPokemon(startPoint, howMany)
+})
+
+
+
+function populatePokeCard(singlePokemon) {
   const pokeScene = document.createElement("div")
   pokeScene.className = "scene"
   const pokeCard = document.createElement("div")
@@ -47,17 +88,30 @@ function populatePokeCards(singlePokemon) {
   pokeGrid.appendChild(pokeScene)
 }
 
+
+
+
+
+
 function populateCardFront(pokemon) {
   const pokeFront = document.createElement("figure")
   pokeFront.className = "card_face front"
   const pokeImg = document.createElement("img")
-  pokeImg.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`
+  if(pokemon.id === 9001){
+      pokeImg.src = '../pictures_for_portfolio/pokeball.png'
+  }
+  else{
+      pokeImg.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`
+    }
   const pokeCaption = document.createElement("figcaption")
-  pokeCaption.textContent = pokemon.name
+  pokeCaption.textContent = `${pokemon.id} ${pokemon.name}`
   pokeFront.appendChild(pokeImg)
   pokeFront.appendChild(pokeCaption)
   return pokeFront
 }
+
+
+
 
 function populateCardBack(pokemon) {
   const pokeBack = document.createElement("div")
@@ -66,7 +120,6 @@ function populateCardBack(pokemon) {
   label.textContent = "Abilities:"
   const abilityList = document.createElement("ul")
   pokemon.abilities.forEach((ability) => {
-    console.log(ability)
     let abilityItem = document.createElement("li")
     abilityItem.textContent = ability.ability.name
     abilityList.appendChild(abilityItem)
@@ -76,15 +129,15 @@ function populateCardBack(pokemon) {
   return pokeBack
 }
 
+
+
+
 class Pokemon {
     constructor(name, height, weight, abilities) {
         this.name = name,
         this.height = height,
         this.weight = weight,
-        this.abilities = abilities, 
+        this.abilities = abilities
+        this.id = 9001
     }
 }
-
-let newPokemon = new Pokemon ('Thoremon', 234, 3785)
-console.log(newPokemon)
-
