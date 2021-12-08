@@ -14,7 +14,6 @@ async function getAPIData(url) {
 
 
 
-
 function loadPokemon(offset = 0, limit = 25) {
   getAPIData(
     `https://pokeapi.co/api/v2/pokemon/?limit=${limit}&offset=${offset}`
