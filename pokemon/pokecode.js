@@ -14,7 +14,7 @@ async function getAPIData(url) {
 
 
 
-function loadPokemon(offset = 0, limit = 25) {
+function loadPokemon(offset = 0, limit = 5) {
   getAPIData(
     `https://pokeapi.co/api/v2/pokemon/?limit=${limit}&offset=${offset}`
   ).then(async (data) => {
@@ -26,8 +26,6 @@ function loadPokemon(offset = 0, limit = 25) {
     }
   })
 }
-
-
 
 
 
@@ -69,15 +67,33 @@ morePokemon.addEventListener('click', () => {
 })
 
 
+/*
+function sound(src) {
+  this.sound = document.createElement("audio");
+  this.sound.src = src;
+  this.sound.setAttribute("preload", "auto");
+  this.sound.setAttribute("controls", "none");
+  this.sound.style.display = "none";
+  document.body.appendChild(this.sound);
+  this.play = function(){
+    this.sound.play();
+  }
+  this.stop = function(){
+    this.sound.pause();
+  }
+}
+*/
+
 
 function populatePokeCard(singlePokemon) {
   const pokeScene = document.createElement("div")
   pokeScene.className = "scene"
   const pokeCard = document.createElement("div")
   pokeCard.className = "card"
-  pokeCard.addEventListener("click", () =>
+  pokeCard.addEventListener("click", () => {
+    // sound('card_flip.mp3')
     pokeCard.classList.toggle("is-flipped")
-  )
+  })
   const front = populateCardFront(singlePokemon)
   const back = populateCardBack(singlePokemon)
 
@@ -139,4 +155,76 @@ class Pokemon {
         this.abilities = abilities
         this.id = 9001
     }
+}
+
+function typesBackground(pokemon, card){
+  let pokeType1 = pokemon.types[0].type.name
+  let pokeType2 = pokemon.types[1]?.type.name
+  if (!pokeType2) {
+    card.style.setProperty('background', getPoketypeColor(pokeType1))
+  } else {
+    card.style.setProperty('background', `linear-gradient(${pokeType1}, ${pokeType2})`), 
+  }//40 min in the video 
+}
+
+function getPoketypeColor(pokeType){
+  let color 
+  switch (pokeType) {
+    case 'Normal': 
+    color = "#ACAD99"
+    break
+    case 'Fighting': 
+    color = "#C45D4C"
+    break
+    case 'Flying': 
+    color = "#90AAD7"
+    break
+    case 'Poison': 
+    color = "#B369AF"
+    break
+    case 'Ground': 
+    color = "#CEB250"
+    break
+    case 'Rock': 
+    color = "#BAA85E"
+    break
+    /*
+    case 'Normal': 
+    color = "#ACAD99"
+    break
+    case 'Normal': 
+    color = "#ACAD99"
+    break
+    case 'Normal': 
+    color = "#ACAD99"
+    break
+    case 'Normal': 
+    color = "#ACAD99"
+    break
+    case 'Normal': 
+    color = "#ACAD99"
+    break
+    case 'Normal': 
+    color = "#ACAD99"
+    break
+    case 'Normal': 
+    color = "#ACAD99"
+    break
+    case 'Normal': 
+    color = "#ACAD99"
+    break
+    case 'Normal': 
+    color = "#ACAD99"
+    break
+    case 'Normal': 
+    color = "#ACAD99"
+    break
+    case 'Normal': 
+    color = "#ACAD99"
+    break
+    */
+   default:
+     color = 'purple'
+  }
+  return color
 }
