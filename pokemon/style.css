@@ -10,6 +10,12 @@ header{
     padding: 1.5rem 1rem;
 }
 
+.pokemon-logo{
+    display: flex;
+    justify-content: center;
+    background-color: red;
+}
+
 /*nav stuff*/
 nav ul{
     list-style-type: none;
@@ -33,6 +39,11 @@ nav ul .active a{
 }
 
 /*Main stuff goes here */
+
+main h1{
+    padding: 1rem;
+}
+
 
 .pokeGrid{
     display: flex;
@@ -66,6 +77,7 @@ nav ul .active a{
     background-color: beige;
     position: absolute;
     backface-visibility: hidden;
+    border-radius: .5rem;
 }
 
 .front{
@@ -81,4 +93,87 @@ nav ul .active a{
 
 figure img{
     width: 200px;
+}
+
+#filtersName{
+    display: flex;
+    justify-content: center;
+    margin: 1rem;
+    color: red;
+}
+
+.filters-box{
+    background-color: rgb(153, 153, 113);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.filter-button{
+    color: white;
+    border-radius: 1rem;
+    padding: .4rem;
+    margin: .5rem;
+}
+
+.normal-button{
+    background-color: #ACAD99;
+}
+.fighting-button{
+    background-color: #C45D4C;
+}
+.flying-button{
+    background-color: #90AAD7;
+}
+.poison-button{
+    background-color: #B369AF;
+}
+.ground-button{
+    background-color: #CEB250;
+}
+.rock-button{
+    background-color: #BAA85E;
+}
+.bug-button{
+    background-color: #ACC23E;
+}
+.ghost-button{
+    background-color: #816DB6;
+}
+.steel-button{
+    background-color: #9FA9AF;
+}
+.fire-button{
+    background-color: #E87A3D;
+}
+.water-button{
+    background-color: #639CE4;
+}
+
+.grass-button{
+    background-color: #82C95B;
+}
+
+.electric-button{
+    background-color: #E7C536;
+}
+
+.psychic-button{
+    background-color: #E96C95;
+}
+
+.ice-button{
+    background-color: #81CFD7;
+}
+
+.dragon-button{
+    background-color: #8572C8;
+}
+
+.dark-button{
+    background-color: #79726B;
+}
+
+.fairy-button{
+    background-color: #E8B0EB;
 }
