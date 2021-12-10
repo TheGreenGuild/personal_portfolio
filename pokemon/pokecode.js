@@ -1,3 +1,10 @@
+/*I fixed it so if there is an error image it shows as a pokeball
+try using the rock pokemon type to test this 
+
+Clears out the old cards wben you clicka  new button 
+
+*/
+
 //This waits until it finishes fetching info from the url and console logs it.
 //it shows us the error if we get an error though
 import {removeChildren } from '../star_wars_pages/utils/index.js'
@@ -65,7 +72,7 @@ newButton.addEventListener('click', () => {
     let pokeHeight = prompt('How tall is your Pokémon?')
     let pokeWeight = prompt('How heavy is your Pokémon?')
     let pokeAbilities = prompt('What abilities does your Pokémon have? (Enter as a comma seperated list.)')
-    let pokeType = prompt("What type is your Pokémon? (Use lower case and a space between if it's two types)")
+    let pokeType = prompt("What type is your Pokémon? (Use lower case and a comma between if it's two types)")
     let newPokemon = new Pokemon (
       pokeName, 
       pokeHeight, 
@@ -131,16 +138,27 @@ function populateCardFront(pokemon) {
   if(pokemon.id === 9001){
       pokeImg.src = '../pictures_for_portfolio/pokeball.png'
   }
-  else{
+  else {
       pokeImg.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`
     }
+
   const pokeCaption = document.createElement("figcaption")
-  pokeCaption.textContent = `${pokemon.id} ${pokemon.name}`
+  const capsName = (pokemon.name)
+  pokeCaption.textContent = `${pokemon.name}`
+  pokeCaption.classList = 'pokemonName'
+  const pokeId = document.createElement('h4')
+  pokeId.textContent = pokemon.id
+  pokeId.classList = "pokeId"
+  pokeFront.appendChild(pokeId)
   pokeFront.appendChild(pokeImg)
   pokeFront.appendChild(pokeCaption)
+  
 
   typesBackground(pokemon, pokeFront)
-
+  //fixes the broken image links with a pokeball
+  pokeImg.addEventListener('error', () =>{
+    pokeImg.src = '../pictures_for_portfolio/pokeball.png'
+  })
   return pokeFront
 }
 
@@ -148,23 +166,34 @@ function populateCardFront(pokemon) {
 function populateCardBack(pokemon) {
   const pokeBack = document.createElement("div")
   pokeBack.className = "card_face back"
-  const label = document.createElement("h4")
-  label.textContent = "Abilities:"
+  const abilitiesLabel = document.createElement("h4")
+  abilitiesLabel.textContent = "Abilities"
+  abilitiesLabel.classList = "abilitiesLabel"
   const abilityList = document.createElement("ul")
+  abilityList.classList = "abilityList"
   pokemon.abilities.forEach((ability) => {
     let abilityItem = document.createElement("li")
+    abilityItem.classList = "abilityItem"
     abilityItem.textContent = ability.ability.name
     abilityList.appendChild(abilityItem)
   })
+  const typesLabel = document.createElement('h4')
+  typesLabel.classList = "typesLabel"
+  typesLabel.textContent = "Pokemon Type"
   const pokeTypes = document.createElement('ol')
+  pokeTypes.classList = "pokeTypeList"
   pokemon.types.forEach((pokeType) => {
     let typeItem = document.createElement('li')
+    typeItem.classList = ('pokeType')
     typeItem.textContent = pokeType.type.name
     pokeTypes.appendChild(typeItem)
   })
 
-  pokeBack.appendChild(label)
+  typesBackground(pokemon, pokeBack)
+
+  pokeBack.appendChild(abilitiesLabel)
   pokeBack.appendChild(abilityList)
+  pokeBack.appendChild(typesLabel)
   pokeBack.appendChild(pokeTypes)
   return pokeBack
 }

@@ -2,17 +2,17 @@
     margin: 0;
     box-sizing: border-box;
     --main-color-one: rgb(111, 114, 250);
+    font-family: 'Roboto', sans-serif;
 }
 
 /*header stuff*/
 header{
-    font-size: 2rem;
-    padding: 1.5rem 1rem;
+    padding: 1rem 1rem;
 }
 
 .pokemon-logo{
     display: flex;
-    justify-content: center;
+    width: 100vw;
     background-color: red;
 }
 
@@ -22,7 +22,7 @@ nav ul{
     display: flex;
     margin: 0;
     padding: 0;
-    background-color: var(--main-color-one);
+    background-color: #cccccc;
     width: 100%;
 }
 
@@ -44,12 +44,30 @@ main h1{
     padding: 1rem;
 }
 
+.buttonsBox{
+    margin: 1rem;
+    display: flex;
+    justify-content: center;
+}
 
+.main-button{
+    margin: 0rem 1rem;
+    border-radius: 2rem;
+    padding: .4rem;
+    font-size: 1rem;
+    background-color: rgb(77, 76, 76);
+    color: white;
+}
+
+.pokeGrid p{
+    margin: 2rem;
+    line-height: 3rem;
+}
 .pokeGrid{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
-
 
 .scene{
     width: 200px; 
@@ -78,6 +96,7 @@ main h1{
     position: absolute;
     backface-visibility: hidden;
     border-radius: .5rem;
+    border: 5px solid rgb(206, 206, 146);
 }
 
 .front{
@@ -85,35 +104,119 @@ main h1{
     background-color: #2a75bb;
 }
 
-.back{
-    color: white;
-    background-color: salmon;
-    transform: rotateY(180deg);
+.pokeId{
+    color: black;
+    border: 1px solid black;
+    border-radius: 1rem;
+    display: inline;
+    padding: .3rem;
+    position: relative;
+    top: .6rem;
+    left: .2rem;
+    background-color: rgba(100, 100, 100, .5);
+    font-weight: 400;
 }
 
+.pokemonName{
+    background-color: rgba(100, 100, 100, .5);
+    font-weight: 500;
+    font-size: 1.1rem;
+    padding: .5rem;
+}
+
+.back{
+    color: white;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+}
+
+
 figure img{
-    width: 200px;
+    width: 180px;
+}
+
+.card figure figcaption::first-letter{
+    text-transform: capitalize;
+}
+
+.card figure figcaption{
+    text-align: center;
+    position: relative;
+    top: 1rem;
+}
+
+.typesLabel{
+    border: 2px solid black;
+    padding: .5rem;
+    border-radius: 1rem;
+    margin: .4rem .5rem .1rem .5rem;
+    background-color: #CCC;
+    color: black;
+}
+
+.pokeTypeList{
+    border-radius: 5px;
+}
+
+.pokeType{
+    list-style: none;
+    margin: .3rem;
+    padding: .2rem 0 .2rem 1rem;
+    border: 1px solid black;
+    border-radius: 1rem;
+    background-color: #DDD;
+    color: black;
+}
+.pokeType::first-letter{
+    text-transform: capitalize;
+}
+
+.abilitiesLabel{
+    border: 2px solid black;
+    padding: .5rem;
+    border-radius: 1rem;
+    margin: 1rem .5rem .1rem .5rem;
+    background-color: rgb(109, 107, 107);
+}
+
+.abilityList{
+    margin: 0 0 .2rem 0; 
+}
+
+.abilityItem{
+    list-style: none;
+    padding: .2rem 0 .2rem 1rem;
+    border: 1px solid black;
+    background-color: grey;
+    border-radius: 1rem;
+    margin: .3rem;
+    padding: .2rem 0 .2rem 1rem;
+}
+.abilityItem::first-letter{
+    text-transform: capitalize;
 }
 
 #filtersName{
     display: flex;
     justify-content: center;
-    margin: 1rem;
     color: red;
+    padding: 1rem;
+    font-size: 2rem;
 }
 
 .filters-box{
-    background-color: rgb(153, 153, 113);
+    background-color: #444;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
-
 .filter-button{
     color: white;
-    border-radius: 1rem;
+    border-radius: 2rem;
     padding: .4rem;
     margin: .5rem;
+    font-size: 1.2rem;
 }
 
 .normal-button{
@@ -176,4 +279,14 @@ figure img{
 
 .fairy-button{
     background-color: #E8B0EB;
+}
+
+/*Footer stuff here */
+footer{
+    background-color: red;
+    color: white;
+    padding: 1rem;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
 }
