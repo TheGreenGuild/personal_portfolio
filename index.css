@@ -19,8 +19,8 @@ a{
 
 :root{
     --text-gray: rgb(77, 77, 77);
-    --anchor_text_color: rgb(28, 138, 28);
-    --highlight-color: rgb(217, 250, 174);
+    --anchor_text_color: rgb(30, 162, 233);
+    --highlight-color: rgb(151, 210, 249);
 }
 
 #navbar{
@@ -79,8 +79,8 @@ a{
     justify-content: space-around;
     flex-wrap: wrap;
     padding: 50px 30px;
-    border-top: 30px solid rgb(148, 226, 148);
-    border-bottom: 30px solid rgb(148, 226, 148);
+    border-top: 30px solid var(--anchor_text_color);
+    border-bottom: 30px solid var(--anchor_text_color);
     background-color:var(--highlight-color)
 }
 
